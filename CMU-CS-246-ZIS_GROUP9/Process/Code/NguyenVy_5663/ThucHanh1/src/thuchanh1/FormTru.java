@@ -128,9 +128,9 @@ public class FormTru extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtSoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbKetQua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LbDapSo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LbDapSo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbKetQua))
                 .addGap(26, 26, 26)
                 .addComponent(btnHieu)
                 .addGap(29, 29, 29))
@@ -154,9 +154,9 @@ public class FormTru extends javax.swing.JFrame {
     private void btnHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHieuActionPerformed
         // TODO add your handling code here:
         try{
-            int so1 = Integer.parseInt(txtSoA.getText());
-            int so2 = Integer.parseInt(txtSoB.getText());
-            int so3 = Integer.parseInt(txtSoC.getText());          
+            double so1 = Double.parseDouble(txtSoA.getText());
+            double so2 = Double.parseDouble(txtSoB.getText());
+            double so3 = Double.parseDouble(txtSoC.getText());          
             LbDapSo.setText(so1 +" - " + so2 +" - " + so3+" = "+ (so1-so2-so3));
         }catch(Exception e){            
             LbDapSo.setText("Nhập dữ liệu sai");

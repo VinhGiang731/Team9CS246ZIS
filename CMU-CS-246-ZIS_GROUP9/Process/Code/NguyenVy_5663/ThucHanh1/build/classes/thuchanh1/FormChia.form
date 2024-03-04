@@ -117,7 +117,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nh&#x1ea5;n v&#xe1;o t&#xf4;i"/>
+        <Property name="text" type="java.lang.String" value="Nh&#x1ea5;n v&#xe0;o t&#xf4;i"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

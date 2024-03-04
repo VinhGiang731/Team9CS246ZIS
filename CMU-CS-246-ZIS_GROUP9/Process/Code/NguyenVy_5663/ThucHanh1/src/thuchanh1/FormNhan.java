@@ -134,9 +134,9 @@ public class FormNhan extends javax.swing.JFrame {
     private void btnNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanActionPerformed
         // TODO add your handling code here:
         try {
-            int soA = Integer.parseInt(txtSoA.getText());
-            int soB = Integer.parseInt(txtSoB.getText());
-            int soC = Integer.parseInt(txtSoC.getText());
+            double soA = Double.parseDouble(txtSoA.getText());
+            double soB = Double.parseDouble(txtSoB.getText());
+            double soC = Double.parseDouble(txtSoC.getText());
             LBKETQUA.setText(soA+"*"+soB+"*"+soC+"="+(soA*soB*soC));
         } catch (Exception e) {
             LBKETQUA.setText(" nhập sai ");

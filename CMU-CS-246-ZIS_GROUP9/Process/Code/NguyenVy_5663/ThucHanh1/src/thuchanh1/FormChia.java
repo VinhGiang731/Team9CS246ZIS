@@ -58,7 +58,7 @@ public class FormChia extends javax.swing.JFrame {
 
         jLabel4.setText("Kết quả");
 
-        jButton1.setText("Nhấn váo tôi");
+        jButton1.setText("Nhấn vào tôi");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -127,9 +127,13 @@ public class FormChia extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            double so1 = Integer.parseInt(txtSoA.getText());
-            double so2 = Integer.parseInt(txtSoB.getText());
+            double so1 = Double.parseDouble(txtSoA.getText());
+            double so2 = Double.parseDouble(txtSoB.getText());
             LbKetQua.setText(so1+"/"+so2+"="+(so1/so2));
+            if(so2==0)
+            {
+                LbKetQua.setText(" mẫu không được nhấp số 0");
+            }
         } catch (Exception e) {
             LbKetQua.setText("nhập sai");
         }

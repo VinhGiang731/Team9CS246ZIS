@@ -120,8 +120,8 @@ public class FormCong extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try{
-            int so1 = Integer.parseInt(txtSo1.getText());
-            int so2 = Integer.parseInt(txtSo2.getText());
+            double so1 = Double.parseDouble(txtSo1.getText());
+            double so2 = Double.parseDouble(txtSo2.getText());
             lblKQ.setForeground(Color.BLACK);
             lblKQ.setText(so1 +" + " + so2 +" = "+ (so1+ so2));
         }catch(Exception e){
