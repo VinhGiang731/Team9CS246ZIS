@@ -17,6 +17,7 @@ public class FormTru extends javax.swing.JFrame {
      */
     public FormTru() {
         initComponents();
+        setTitle("PhepTru");
     }
 
     /**

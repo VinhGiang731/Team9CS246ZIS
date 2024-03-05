@@ -115,9 +115,6 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="T&#xed;nh Th&#x1b0;&#x1a1;ng"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="T&#xed;nh Th&#x1b0;&#x1a1;ng"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

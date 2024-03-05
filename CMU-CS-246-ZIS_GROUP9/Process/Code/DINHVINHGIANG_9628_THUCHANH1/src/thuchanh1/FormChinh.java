@@ -21,6 +21,7 @@ public class FormChinh extends javax.swing.JFrame {
      * Creates new form FormChinh
      */
     public FormChinh() {
+        setTitle("VinhGiang_317");
         initComponents();
     }
 
@@ -179,7 +180,7 @@ public class FormChinh extends javax.swing.JFrame {
         
         frm.setLocation(x, y);
         frm.setDefaultCloseOperation(frm.EXIT_ON_CLOSE);
-         frm.setVisible(true);
+        frm.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -190,6 +191,7 @@ public class FormChinh extends javax.swing.JFrame {
         Dimension src = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (src.width-frm.getWidth())/2;
         int y = (src.height-frm.getHeight())/2;
+        
         frm.setDefaultCloseOperation(frm.EXIT_ON_CLOSE);
         frm.setLocation(x, y);
         frm.setVisible(true);
@@ -202,6 +204,7 @@ public class FormChinh extends javax.swing.JFrame {
         Dimension src = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (src.width-frm.getWidth())/2;
         int y = (src.height-frm.getHeight())/2;
+        
         frm.setDefaultCloseOperation(frm.EXIT_ON_CLOSE);
         frm.setLocation(x, y);
         frm.setVisible(true);
@@ -214,6 +217,7 @@ public class FormChinh extends javax.swing.JFrame {
         Dimension src = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (src.width-frm.getWidth())/2;
         int y = (src.height-frm.getHeight())/2;
+        
         frm.setDefaultCloseOperation(frm.EXIT_ON_CLOSE);
         frm.setLocation(x, y);
         frm.setVisible(true);
@@ -231,6 +235,7 @@ public class FormChinh extends javax.swing.JFrame {
          Dimension src = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (src.width-frm.getWidth())/2;
         int y = (src.height-frm.getHeight())/2;
+        
         frm.setDefaultCloseOperation(frm.EXIT_ON_CLOSE);
         frm.setLocation(x, y);
         frm.setVisible(true);

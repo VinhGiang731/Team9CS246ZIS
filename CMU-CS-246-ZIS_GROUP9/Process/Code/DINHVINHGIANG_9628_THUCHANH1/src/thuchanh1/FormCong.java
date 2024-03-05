@@ -18,6 +18,7 @@ public class FormCong extends javax.swing.JFrame {
      */
     public FormCong() {
         initComponents();
+        setTitle("PhepCong");
     }
 
     /**

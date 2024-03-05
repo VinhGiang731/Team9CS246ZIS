@@ -17,6 +17,7 @@ public class FormChia extends javax.swing.JFrame {
      */
     public FormChia() {
         initComponents();
+        setTitle("PhepChia");
     }
 
     /**

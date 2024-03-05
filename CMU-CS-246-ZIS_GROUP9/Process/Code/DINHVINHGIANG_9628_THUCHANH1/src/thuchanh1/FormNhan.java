@@ -17,6 +17,7 @@ public class FormNhan extends javax.swing.JFrame {
      */
     public FormNhan() {
         initComponents();
+        setTitle("PhepNhan");
     }
 
     /**
