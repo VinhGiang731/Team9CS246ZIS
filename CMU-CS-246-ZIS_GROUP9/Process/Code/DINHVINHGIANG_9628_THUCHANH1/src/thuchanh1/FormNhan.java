@@ -5,6 +5,9 @@
 package thuchanh1;
 
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  *
@@ -18,6 +21,7 @@ public class FormNhan extends javax.swing.JFrame {
     public FormNhan() {
         initComponents();
         setTitle("PhepNhan");
+        setIconImage();
     }
 
     /**
@@ -157,7 +161,7 @@ public class FormNhan extends javax.swing.JFrame {
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,9 +174,13 @@ public class FormNhan extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            double number1 = Double.parseDouble(jTextField1.getText());
-            double number2 = Double.parseDouble(jTextField2.getText());
-            jLabel5.setText(number1 +" x "+number2+" = "+number1*number2);
+            double number1 = Double.parseDouble(jTextField1.getText().trim());
+            double number2 = Double.parseDouble(jTextField2.getText().trim());
+            double n3 = number1 * number2;
+            NumberFormat formatter = new DecimalFormat("#0.00"); 
+            
+            jLabel5.setForeground(Color.black);
+            jLabel5.setText(number1 +" x "+number2+" = "+formatter.format(n3));
         } catch (Exception e) {
             jLabel5.setForeground(Color.red);
             jLabel5.setText("ERROR!!!");
@@ -184,7 +192,10 @@ public class FormNhan extends javax.swing.JFrame {
         try {
             double number1 = Double.parseDouble(jTextField1.getText());
             double number3 = Double.parseDouble(jTextField3.getText());
-            jLabel5.setText(number1 +" x "+number3+" = "+number1*number3);
+            jLabel5.setForeground(Color.black);
+            NumberFormat formatter = new DecimalFormat("#0.00");
+            
+            jLabel5.setText(number1 +" x "+number3+" = "+formatter.format(number1*number3));
         } catch (Exception e) {
             jLabel5.setForeground(Color.red);
             jLabel5.setText("ERROR!!!");
@@ -196,7 +207,10 @@ public class FormNhan extends javax.swing.JFrame {
          try {
             double number2 = Double.parseDouble(jTextField2.getText());
             double number3 = Double.parseDouble(jTextField3.getText());
-            jLabel5.setText(number2 +" x "+number3+" = "+number2*number3);
+            jLabel5.setForeground(Color.black);
+            NumberFormat formatter = new DecimalFormat("#0.00");
+            
+            jLabel5.setText(number2 +" x "+number3+" = "+formatter.format(number2*number3));
         } catch (Exception e) {
             jLabel5.setForeground(Color.red);
             jLabel5.setText("ERROR!!!");
@@ -260,4 +274,8 @@ public class FormNhan extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon/multip.png")));
+    }
 }

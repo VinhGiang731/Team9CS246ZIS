@@ -6,6 +6,7 @@
 package thuchanh1;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  *
@@ -19,6 +20,7 @@ public class FormCong extends javax.swing.JFrame {
     public FormCong() {
         initComponents();
         setTitle("PhepCong");
+        setIconImage();
     }
 
     /**
@@ -121,10 +123,11 @@ public class FormCong extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try{
-            int so1 = Integer.parseInt(txtSo1.getText());
-            int so2 = Integer.parseInt(txtSo2.getText());
+            double so1 = Integer.parseInt(txtSo1.getText().trim());
+            double so2 = Integer.parseInt(txtSo2.getText().trim());
+            double so3 = so1+so2;
             lblKQ.setForeground(Color.BLACK);
-            lblKQ.setText(so1 +" + " + so2 +" = "+ (so1+ so2));
+            lblKQ.setText(so1 +" + " + so2 +" = "+ so3);
         }catch(Exception e){
             lblKQ.setForeground(Color.red);
             lblKQ.setText("Nhập dữ liệu sai");
@@ -186,7 +189,8 @@ public class FormCong extends javax.swing.JFrame {
     private javax.swing.JTextField txtSo2;
     // End of variables declaration//GEN-END:variables
 
-    void setLocale(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+    private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon/plusicon.png")));
     }
 }

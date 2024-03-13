@@ -5,6 +5,9 @@
 package thuchanh1;
 
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  *
@@ -18,6 +21,7 @@ public class FormChia extends javax.swing.JFrame {
     public FormChia() {
         initComponents();
         setTitle("PhepChia");
+        setIconImage();
     }
 
     /**
@@ -165,15 +169,20 @@ public class FormChia extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try {
-            double n1 = Double.parseDouble(jTextField2.getText());
-            double n2 = Double.parseDouble(jTextField3.getText());
+            double n1 = Double.parseDouble(jTextField2.getText().trim());
+            double n2 = Double.parseDouble(jTextField3.getText().trim());
+            NumberFormat formatter = new DecimalFormat("#0.00");   
             
             double result = n1 / n2;
             if(n2!=0)
-            jTextField4.setText(result+"");
-            else
+            {
+                   jTextField4.setForeground(Color.black);
+                jTextField4.setText(formatter.format(result)+"");
+            }
+            else{
                 jTextField4.setForeground(Color.red);
                 jTextField4.setText("ERROR!!!");
+            }
         } catch (Exception e) {
             jTextField4.setForeground(Color.red);
             jTextField4.setText("ERROR!!!");
@@ -185,13 +194,18 @@ public class FormChia extends javax.swing.JFrame {
          try {
             double n1 = Double.parseDouble(jTextField1.getText());
             double n2 = Double.parseDouble(jTextField2.getText());
+            NumberFormat formatter = new DecimalFormat("#0.00");   
             
             double result = n1 / n2;
             if(n2!=0)
-            jTextField4.setText(result+"");
-            else
+            {
+                jTextField4.setForeground(Color.black);
+                jTextField4.setText(formatter.format(result)+"");
+            }
+            else{
                 jTextField4.setForeground(Color.red);
                 jTextField4.setText("ERROR!!!");
+            }
         } catch (Exception e) {
              jTextField4.setForeground(Color.red);
             jTextField4.setText("ERROR!!!");
@@ -203,13 +217,18 @@ public class FormChia extends javax.swing.JFrame {
          try {
             double n1 = Double.parseDouble(jTextField1.getText());
             double n2 = Double.parseDouble(jTextField3.getText());
+            NumberFormat formatter = new DecimalFormat("#0.00");   
             
             double result = n1 / n2;
             if(n2!=0)
-            jTextField4.setText(result+"");
-            else
-                 jTextField4.setForeground(Color.red);
+            {
+                jTextField4.setForeground(Color.black);
+                jTextField4.setText(formatter.format(result)+"");
+            }
+            else{
+                jTextField4.setForeground(Color.red);
                 jTextField4.setText("ERROR!!!");
+            }
         } catch (Exception e) {
             jTextField4.setForeground(Color.red);
             jTextField4.setText("ERROR!!!");
@@ -274,4 +293,8 @@ public class FormChia extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon/divicon.png")));
+    }
 }

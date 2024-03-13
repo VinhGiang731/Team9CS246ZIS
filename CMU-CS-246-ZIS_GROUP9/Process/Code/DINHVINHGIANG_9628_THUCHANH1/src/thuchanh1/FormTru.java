@@ -5,6 +5,7 @@
 package thuchanh1;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  *
@@ -18,6 +19,7 @@ public class FormTru extends javax.swing.JFrame {
     public FormTru() {
         initComponents();
         setTitle("PhepTru");
+        setIconImage();
     }
 
     /**
@@ -142,9 +144,11 @@ public class FormTru extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
-            int number1 = Integer.parseInt(jTextField1.getText());
-            int number2 = Integer.parseInt(jTextField2.getText());
-            jTextField3.setText((number1 - number2)+"");
+            int number1 = Integer.parseInt(jTextField1.getText().trim());
+            int number2 = Integer.parseInt(jTextField2.getText().trim());
+            int n3 = number1 -  number2;
+            jTextField3.setForeground(Color.black);
+            jTextField3.setText(n3+"");
         }catch(Exception e){
             jTextField3.setForeground(Color.red);
            jTextField3.setText("ERROR, Try again!!!");
@@ -157,6 +161,7 @@ public class FormTru extends javax.swing.JFrame {
             int number1 = Integer.parseInt(jTextField1.getText());
             int number2 = Integer.parseInt(jTextField2.getText());
             jTextField3.setText((number2 - number1)+"");
+            jTextField3.setForeground(Color.black);
         }catch(Exception e){
             jTextField3.setForeground(Color.red);
            jTextField3.setText("ERROR, Try again!!!");
@@ -172,7 +177,9 @@ public class FormTru extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
+       private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon/minusicon.png")));
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -205,6 +212,8 @@ public class FormTru extends javax.swing.JFrame {
             }
         });
     }
+    
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
