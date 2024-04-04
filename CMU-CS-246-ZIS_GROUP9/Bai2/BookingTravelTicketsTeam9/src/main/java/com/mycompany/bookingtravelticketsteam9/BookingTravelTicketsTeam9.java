@@ -4,6 +4,8 @@
 
 package com.mycompany.bookingtravelticketsteam9;
 
+import java.awt.print.Book;
+
 /**
  *
  * @author HI
@@ -11,6 +13,6 @@ package com.mycompany.bookingtravelticketsteam9;
 public class BookingTravelTicketsTeam9 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Book m = new Book();
     }
 }
