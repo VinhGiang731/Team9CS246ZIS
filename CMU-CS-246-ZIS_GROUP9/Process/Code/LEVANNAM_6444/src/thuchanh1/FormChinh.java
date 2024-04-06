@@ -87,8 +87,6 @@ public class FormChinh extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Nam_2\\APPLICATION\\Team9CS246ZIS\\CMU-CS-246-ZIS_GROUP9\\Process\\Code\\LEVANNAM_6444\\logo.png")); // NOI18N
-
         jMenu3.setText("Hệ thống");
 
         jMenuItem2.setText("Thoát");
@@ -152,7 +150,7 @@ public class FormChinh extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
         );
 
         pack();

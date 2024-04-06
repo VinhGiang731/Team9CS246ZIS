@@ -9,12 +9,10 @@ package BookingTicket;
  * @author HI
  */
 public class Main {
+    
     public static void main(String[] args) {
-     Booking B = new Booking();
-     B.pack();
-     B.setLocationRelativeTo(null);
-     B.setDefaultCloseOperation(B.EXIT_ON_CLOSE);
-     B.setVisible(true);
+        Booking b = new Booking();  
+        b.setVisible(true);
     }
 
 }
