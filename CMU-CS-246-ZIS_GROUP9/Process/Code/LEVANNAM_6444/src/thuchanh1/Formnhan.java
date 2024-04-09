@@ -128,7 +128,7 @@ public class Formnhan extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addGap(1, 1, 1)
                 .addComponent(ketqua, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
