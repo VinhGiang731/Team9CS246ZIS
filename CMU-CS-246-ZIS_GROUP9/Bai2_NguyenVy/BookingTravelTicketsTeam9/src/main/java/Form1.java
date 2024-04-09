@@ -21,10 +21,10 @@ public class Form1 extends javax.swing.JFrame {
      */
     public Form1() {
         initComponents();
-        showComBodiaDiemDi();
-        showComBodiaDiemDen();
-        showComBoNgayDi();
-        showComBoSoLuongNguoi();
+//        showComBodiaDiemDi();
+//        showComBodiaDiemDen();
+//        showComBoNgayDi();
+//        showComBoSoLuongNguoi();
     }
 
     /**
@@ -58,7 +58,6 @@ public class Form1 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -70,7 +69,8 @@ public class Form1 extends javax.swing.JFrame {
         jLabel2.setText("Điểm đi");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 57, -1));
 
-        jComboBox1.setToolTipText("HoChiMinh");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hồ Chí Minh", "Đà Nẵng", "Hà Nội", "Đà Lạt" }));
+        jComboBox1.setToolTipText("\n");
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -78,6 +78,7 @@ public class Form1 extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 140, -1));
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hồ Chí Minh", "Đà Nẵng", "Hà Nội", "Đà Lạt" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -164,31 +165,37 @@ public class Form1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Giang làm hàm gettext của combobox
-    public String getTextCB1(){
+    //code G làm
+    public String getTextCB1(java.awt.event.ActionEvent evt){
         String s = (String) jComboBox1.getSelectedItem();
         return s;
     }
     
-    public String getTextCB2(){
+    public String getTextCB2(java.awt.event.ActionEvent evt){
         String s = (String) jComboBox2.getSelectedItem();
         return s;
     }
+    //
+    
+//    public String getTextCB2(java.awt.event.ActionEvent evt){
+//        String s = (String) jComboBox2.getSelectedItem();
+//        return s;
+//    }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Ticket T = new Ticket();
-        T.getDataTravel();
+        T.getDataTravel(getTextCB1(evt), getTextCB2(evt));
         T.setTitle("Bảng vé");
         T.pack();
         T.setLocationRelativeTo(null);
         T.setDefaultCloseOperation(EXIT_ON_CLOSE);
         T.setVisible(true);
 
-//        ArrayList<String> l = diaDiemDI.getdiaDiemDI();
-//        ArrayList<String> l1 = diaDiemDen.getdiaDiemDen();
-//        ArrayList<Integer> l2 = ngayDiVaVe.getNgayDiVaVe();
-//        thongTinChuyenBay chuyenBay = new thongTinChuyenBay();
+        ArrayList<String> l = diaDiemDI.getdiaDiemDI();
+        ArrayList<String> l1 = diaDiemDen.getdiaDiemDen();
+        ArrayList<Integer> l2 = ngayDiVaVe.getNgayDiVaVe();
+        thongTinChuyenBay chuyenBay = new thongTinChuyenBay();
 //
 //        String selecDiemDi = (String) jComboBox1.getSelectedItem();
 //        String selecDiemDen = (String) jComboBox2.getSelectedItem();
@@ -251,63 +258,6 @@ public class Form1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-//        String selectedValue = (String) jComboBox2.getSelectedItem();
-//
-//        if (selectedValue != null)
-//        {
-//
-//            if(selectedValue.trim().equals("Đà Nẵng"))
-//            {
-//                diemden.setText(" đó là đà nẵng ");
-//            }
-//            else if(selectedValue.trim().equals("Hà Nội"))
-//            {
-//                diemden.setText(" đó là hà nội");
-//            }
-//            else if(selectedValue.trim().equals("Hồ Chí Minh"))
-//            {
-//                diemden.setText(" đó là Hồ Chí Minh");
-//            }
-//            else if(selectedValue.trim().equals("Hải Phòng"))
-//            {
-//                diemden.setText(" đó là Hải Phòng");
-//            }
-//            else if(selectedValue.trim().equals("Đà Lạt"))
-//            {
-//                diemden.setText(" đó là Đà Lạt");
-//            }
-//        }
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-//        String selectedValue = (String) jComboBox1.getSelectedItem();
-//
-//        if (selectedValue != null)
-//        {
-//            if(selectedValue.trim().equals("Đà Nẵng"))
-//            {
-//                diemdi.setText(" đó là đà nẵng ");
-//            }
-//            else if(selectedValue.trim().equals("Hà Nội"))
-//            {
-//                diemdi.setText(" đó là hà nội");
-//            }
-//            else if(selectedValue.trim().equals("Hồ Chí Minh"))
-//            {
-//                diemdi.setText(" đó là Hồ Chí Minh");
-//            }
-//            else if(selectedValue.trim().equals("Hải Phòng"))
-//            {
-//                diemdi.setText(" đó là Hải Phòng");
-//            }
-//            else if(selectedValue.trim().equals("Đà Lạt"))
-//            {
-//                diemdi.setText(" đó là Đà Lạt");
-//            }
-//        }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
@@ -315,6 +265,63 @@ public class Form1 extends javax.swing.JFrame {
     private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox8ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        //        String selectedValue = (String) jComboBox2.getSelectedItem();
+        //
+        //        if (selectedValue != null)
+        //        {
+            //
+            //            if(selectedValue.trim().equals("Đà Nẵng"))
+            //            {
+                //                diemden.setText(" đó là đà nẵng ");
+                //            }
+            //            else if(selectedValue.trim().equals("Hà Nội"))
+            //            {
+                //                diemden.setText(" đó là hà nội");
+                //            }
+            //            else if(selectedValue.trim().equals("Hồ Chí Minh"))
+            //            {
+                //                diemden.setText(" đó là Hồ Chí Minh");
+                //            }
+            //            else if(selectedValue.trim().equals("Hải Phòng"))
+            //            {
+                //                diemden.setText(" đó là Hải Phòng");
+                //            }
+            //            else if(selectedValue.trim().equals("Đà Lạt"))
+            //            {
+                //                diemden.setText(" đó là Đà Lạt");
+                //            }
+            //        }
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        //        String selectedValue = (String) jComboBox1.getSelectedItem();
+        //
+        //        if (selectedValue != null)
+        //        {
+            //            if(selectedValue.trim().equals("Đà Nẵng"))
+            //            {
+                //                diemdi.setText(" đó là đà nẵng ");
+                //            }
+            //            else if(selectedValue.trim().equals("Hà Nội"))
+            //            {
+                //                diemdi.setText(" đó là hà nội");
+                //            }
+            //            else if(selectedValue.trim().equals("Hồ Chí Minh"))
+            //            {
+                //                diemdi.setText(" đó là Hồ Chí Minh");
+                //            }
+            //            else if(selectedValue.trim().equals("Hải Phòng"))
+            //            {
+                //                diemdi.setText(" đó là Hải Phòng");
+                //            }
+            //            else if(selectedValue.trim().equals("Đà Lạt"))
+            //            {
+                //                diemdi.setText(" đó là Đà Lạt");
+                //            }
+            //        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,5 +417,7 @@ public class Form1 extends javax.swing.JFrame {
 //            jComboBox9.addItem(Integer.toString(s));
         }
     }
+
+   
 
 }

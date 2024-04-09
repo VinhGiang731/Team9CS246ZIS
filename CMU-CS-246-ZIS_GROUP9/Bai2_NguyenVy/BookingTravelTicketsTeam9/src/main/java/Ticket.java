@@ -1,8 +1,10 @@
+
+import java.awt.event.ActionEvent;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author ASUS
@@ -34,8 +36,7 @@ public class Ticket extends javax.swing.JFrame {
         diemDen1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel18 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -43,8 +44,7 @@ public class Ticket extends javax.swing.JFrame {
         diemDen2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jLabel19 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -52,8 +52,7 @@ public class Ticket extends javax.swing.JFrame {
         diemDen3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jLabel20 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -62,8 +61,7 @@ public class Ticket extends javax.swing.JFrame {
         diemDen4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel21 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
 
@@ -102,18 +100,13 @@ public class Ticket extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 204, 51));
         jLabel14.setText("(Chưa khởi hành)");
 
-        jCheckBox1.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jCheckBox1StateChanged(evt);
-            }
-        });
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Đặt vé");
+        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-
-        jLabel18.setText("Đặt vé");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,11 +125,9 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,14 +135,16 @@ public class Ticket extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(diemDi1)
-                        .addComponent(diemDen1)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel14)
-                        .addComponent(jCheckBox1)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(diemDi1)
+                                .addComponent(diemDen1)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel14))
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
 
@@ -176,13 +169,13 @@ public class Ticket extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 204, 0));
         jLabel15.setText("(Chưa khởi hành)");
 
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Đặt vé");
+        jButton3.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-
-        jLabel19.setText("Đặt vé");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -201,11 +194,9 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,14 +204,16 @@ public class Ticket extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(diemDi2)
-                        .addComponent(diemDen2)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel15)
-                        .addComponent(jCheckBox2)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(diemDi2)
+                                .addComponent(diemDen2)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel15))
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
 
@@ -245,13 +238,13 @@ public class Ticket extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(255, 204, 0));
         jLabel16.setText("(Chưa khởi hành)");
 
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("Đặt vé");
+        jButton4.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-
-        jLabel20.setText("Đặt vé");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -270,11 +263,9 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(21, 21, 21)
                 .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,14 +273,16 @@ public class Ticket extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(diemDi3)
-                        .addComponent(diemDen3)
-                        .addComponent(jLabel12)
-                        .addComponent(jLabel16)
-                        .addComponent(jCheckBox3)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(diemDi3)
+                                .addComponent(diemDen3)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel16))
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
 
@@ -305,7 +298,7 @@ public class Ticket extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 278, 103, -1));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setPreferredSize(new java.awt.Dimension(0, 42));
+        jPanel4.setPreferredSize(new java.awt.Dimension(631, 46));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/puplePlane.png"))); // NOI18N
 
@@ -324,13 +317,13 @@ public class Ticket extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 204, 0));
         jLabel17.setText("(Chưa khởi hành)");
 
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setText("Đặt vé");
+        jButton5.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
-
-        jLabel21.setText("Đặt vé");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -349,28 +342,26 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(diemDi4)
-                            .addComponent(diemDen4)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel17)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton5)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(diemDi4)
+                                .addComponent(diemDen4)
+                                .addComponent(jLabel13))
+                            .addComponent(jLabel17))))
                 .addContainerGap())
         );
 
@@ -390,10 +381,10 @@ public class Ticket extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGap(0, 540, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 520));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -403,83 +394,62 @@ public class Ticket extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public void getDataTravel() {
-        Form1 f = new Form1();
-        
-        diemDi1.setText(f.getTextCB1());
-        diemDen1.setText(f.getTextCB2());
+    public void getDataTravel(String s, String s2) {
 
-        diemDi2.setText(f.getTextCB1());
-        diemDen2.setText(f.getTextCB2());
-        
-        diemDi3.setText(f.getTextCB1());
-        diemDen3.setText(f.getTextCB2());
-        
-        diemDi4.setText(f.getTextCB1());
-        diemDen4.setText(f.getTextCB2());
+        diemDi1.setText(s);
+        diemDen1.setText(s2);
+
+        diemDi2.setText(s);
+        diemDen2.setText(s2);
+
+        diemDi3.setText(s);
+        diemDen3.setText(s2);
+
+        diemDi4.setText(s);
+        diemDen4.setText(s2);
     }
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-        if (jCheckBox2.isSelected()) {
-            formCheckBox f = new formCheckBox();
-            f.setTitle("Xác nhận");
-            f.setLocationRelativeTo(null);
-            f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
-            f.setVisible(true);
-        } else {
-            jCheckBox2.setSelected(false);
-        }
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    //duyệt lựa chọn cho bảng vé
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-        if (jCheckBox1.isSelected()) {
-            formCheckBox f = new formCheckBox();
-            f.setTitle("Xác nhận");
-            f.setLocationRelativeTo(null);
-            f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
-            f.setVisible(true);
-        } else {
-            jCheckBox1.setSelected(false);
-        }
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-        if (jCheckBox3.isSelected()) {
-            formCheckBox f = new formCheckBox();
-            f.setTitle("Xác nhận");
-            f.setLocationRelativeTo(null);
-            f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
-            f.setVisible(true);
-        } else {
-            jCheckBox3.setSelected(false);
-        }
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
-
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
-        if (jCheckBox4.isSelected()) {
-            formCheckBox f = new formCheckBox();
-            f.setTitle("Xác nhận");
-            f.setLocationRelativeTo(null);
-            f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
-            f.setVisible(true);
-        } else {
-            jCheckBox4.setSelected(false);
-        }
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
-
-    private void jCheckBox1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox1StateChanged
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jCheckBox1StateChanged
 
     private void diemDi1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_diemDi1InputMethodTextChanged
         // TODO add your handling code here:
+
+
     }//GEN-LAST:event_diemDi1InputMethodTextChanged
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        formCheckBox f = new formCheckBox();
+        f.setTitle("Check");
+        f.setLocationRelativeTo(null);
+        f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        formCheckBox f = new formCheckBox();
+        f.setTitle("Check");
+        f.setLocationRelativeTo(null);
+        f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        formCheckBox f = new formCheckBox();
+        f.setTitle("Check");
+        f.setLocationRelativeTo(null);
+        f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        formCheckBox f = new formCheckBox();
+        f.setTitle("Check");
+        f.setLocationRelativeTo(null);
+        f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -526,10 +496,10 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel diemDi3;
     private javax.swing.JLabel diemDi4;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -539,11 +509,7 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
