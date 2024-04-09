@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.SimpleFormatter;
 public class Form1 extends javax.swing.JFrame {
 
     /**
@@ -48,15 +49,13 @@ public class Form1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox8 = new javax.swing.JComboBox<>();
-        jComboBox9 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 500));
@@ -65,7 +64,7 @@ public class Form1 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Variable", 1, 24)); // NOI18N
         jLabel1.setText("VÉ MÁY BAY");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 226, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 226, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Điểm đi");
@@ -132,8 +131,6 @@ public class Form1 extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 90, -1));
 
-        getContentPane().add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 61, -1));
-
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setText("(Từ 12 tuổi trở lên)");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 109, -1));
@@ -155,27 +152,39 @@ public class Form1 extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 205, 47));
 
-        jDateChooser1.setDateFormatString("MM-yyyy");
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 135, 20));
+        jDateChooser1.setDateFormatString("dd-MM-yyyy");
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 135, 20));
 
-        jDateChooser2.setDateFormatString("MM-yyyy");
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 120, -1));
+        jDateChooser2.setDateFormatString("dd-MM-yyyy");
+        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 120, -1));
 
-        getContentPane().add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 61, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("D:\\UniversityDTU\\Year_2\\APPLICATION\\Team9CS246ZIS\\CMU-CS-246-ZIS_GROUP9\\Bai2_NguyenVy\\BookingTravelTicketsTeam9\\src\\Plane.jpg")); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -240, 510, 740));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background.jpg"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Giang làm hàm gettext của combobox
+    public String getTextCB1(){
+        String s = (String) jComboBox1.getSelectedItem();
+        return s;
+    }
+    
+    public String getTextCB2(){
+        String s = (String) jComboBox2.getSelectedItem();
+        return s;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Ticket T = new Ticket();
-        T.setVisible(true);
+        T.getDataTravel();
+        T.setTitle("Bảng vé");
         T.pack();
         T.setLocationRelativeTo(null);
-        this.dispose();
+        T.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        T.setVisible(true);
+
 //        ArrayList<String> l = diaDiemDI.getdiaDiemDI();
 //        ArrayList<String> l1 = diaDiemDen.getdiaDiemDen();
 //        ArrayList<Integer> l2 = ngayDiVaVe.getNgayDiVaVe();
@@ -349,15 +358,13 @@ public class Form1 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -398,9 +405,9 @@ public class Form1 extends javax.swing.JFrame {
         ArrayList<Integer> l = soLuongNguoi.getSoLuong();
         for(int s : l)
         {
-            jComboBox7.addItem(Integer.toString(s));
+//            jComboBox7.addItem(Integer.toString(s));
             jComboBox8.addItem(Integer.toString(s));
-            jComboBox9.addItem(Integer.toString(s));
+//            jComboBox9.addItem(Integer.toString(s));
         }
     }
 

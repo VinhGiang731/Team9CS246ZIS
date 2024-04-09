@@ -17,11 +17,11 @@ public class diaDiemDI {
     static ArrayList<String> l = new ArrayList<>();
     
     public static ArrayList<String> getdiaDiemDI(){
-        l.add(" Hồ Chí Minh ");
-        l.add(" Đà Nẵng ");
-        l.add(" Hà Nội ");
-        l.add(" Hải Phòng ");
-        l.add(" Đà Lạt ");
+        l.add("Hồ Chí Minh");
+        l.add("Đà Nẵng");
+        l.add("Hà Nội");
+        l.add("Hải Phòng");
+        l.add("Đà Lạt");
         return l;
     }
 }
