@@ -8,6 +8,7 @@
  * @author HI
  */ 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,10 +22,10 @@ public class Form1 extends javax.swing.JFrame {
      */
     public Form1() {
         initComponents();
-//        showComBodiaDiemDi();
-//        showComBodiaDiemDen();
+        showComBodiaDiemDi();
+        showComBodiaDiemDen();
 //        showComBoNgayDi();
-//        showComBoSoLuongNguoi();
+        showComBoSoLuongNguoi();
     }
 
     /**
@@ -55,6 +56,7 @@ public class Form1 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +71,6 @@ public class Form1 extends javax.swing.JFrame {
         jLabel2.setText("Điểm đi");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 57, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hồ Chí Minh", "Đà Nẵng", "Hà Nội", "Đà Lạt" }));
         jComboBox1.setToolTipText("\n");
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +79,6 @@ public class Form1 extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 140, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hồ Chí Minh", "Đà Nẵng", "Hà Nội", "Đà Lạt" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -159,6 +159,9 @@ public class Form1 extends javax.swing.JFrame {
         jDateChooser2.setDateFormatString("dd-MM-yyyy");
         getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 120, -1));
 
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 200, -1));
+
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 470));
 
@@ -184,18 +187,63 @@ public class Form1 extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Ticket T = new Ticket();
-        T.getDataTravel(getTextCB1(evt), getTextCB2(evt));
-        T.setTitle("Bảng vé");
-        T.pack();
-        T.setLocationRelativeTo(null);
-        T.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        T.setVisible(true);
+        // Lấy dữ liệu để check điểm đi và điểm đến
+        String selecDiemDi = (String) jComboBox1.getSelectedItem();
+        String selecDiemDen = (String) jComboBox2.getSelectedItem();
+        // Lấy ngày, tháng, năm từ jDateChooser1
+        Date selectedDate = jDateChooser1.getDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String selecNgayThangNam = dateFormat.format(selectedDate);
+        // lấy dữ liệu của người lớn , trẻ em và em bé 
+        String selecNguoiLon = (String) jComboBox3.getSelectedItem();
+        String selecTreEm = (String) jComboBox4.getSelectedItem();
+        String selecEmBe = (String) jComboBox8.getSelectedItem();
+        if(selecDiemDi.trim().equals("Đà Nẵng") && selecDiemDen.trim().equals("Hồ Chí Minh")) 
+        {
+            if(selecNgayThangNam!=null)
+            {
+                Ticket T = new Ticket();
+                T.getDataTravel(getTextCB1(evt), getTextCB2(evt));
+                T.setTitle("Bảng vé");
+                T.pack();
+                T.setLocationRelativeTo(null);
+                T.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                T.setVisible(true);
+            }
+            else 
+            {
+                // sai thì báo lỗi 
+                jLabel12.setText(" chưa chọn ngày tháng năm ");
+            }
+        }
+        else if(selecDiemDi.trim().equals("Hà Nội") && selecDiemDen.trim().equals("Hải Phòng"))
+        {
+            if(selecNgayThangNam!=null)
+            {
+                Ticket T = new Ticket();
+                T.getDataTravel(getTextCB1(evt), getTextCB2(evt));
+                T.setTitle("Bảng vé");
+                T.pack();
+                T.setLocationRelativeTo(null);
+                T.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                T.setVisible(true);
+            }
+            else 
+            {
+                // sai thì báo lỗi 
+                jLabel12.setText(" chưa chọn ngày tháng năm ");
+            }
+        }
+        else 
+        {
+            jLabel12.setText(" hiện tại chưa có chuyến bay ");
+        }
+        
 
-        ArrayList<String> l = diaDiemDI.getdiaDiemDI();
-        ArrayList<String> l1 = diaDiemDen.getdiaDiemDen();
-        ArrayList<Integer> l2 = ngayDiVaVe.getNgayDiVaVe();
-        thongTinChuyenBay chuyenBay = new thongTinChuyenBay();
+//        ArrayList<String> l = diaDiemDI.getdiaDiemDI();
+//        ArrayList<String> l1 = diaDiemDen.getdiaDiemDen();
+//        ArrayList<Integer> l2 = ngayDiVaVe.getNgayDiVaVe();
+//        thongTinChuyenBay chuyenBay = new thongTinChuyenBay();
 //
 //        String selecDiemDi = (String) jComboBox1.getSelectedItem();
 //        String selecDiemDen = (String) jComboBox2.getSelectedItem();
@@ -255,7 +303,7 @@ public class Form1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-
+        
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
@@ -371,6 +419,7 @@ public class Form1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -399,22 +448,22 @@ public class Form1 extends javax.swing.JFrame {
         }
     }
     // show dữ liệu của ngày đi
-    private void showComBoNgayDi() {
-        ArrayList<Integer> l = ngayDiVaVe.getNgayDiVaVe();
-        for(int s : l)
-        {
-            jComboBox3.addItem(Integer.toString(s));
-            jComboBox4.addItem(Integer.toString(s));
-        }
-    }
+//    private void showComBoNgayDi() {
+//        ArrayList<Integer> l = ngayDiVaVe.getNgayDiVaVe();
+//        for(int s : l)
+//        {
+//            jComboBox1.addItem(Integer.toString(s));
+//            jComboBox2.addItem(Integer.toString(s));
+//        }
+//    }
     
     private void showComBoSoLuongNguoi() {
         ArrayList<Integer> l = soLuongNguoi.getSoLuong();
         for(int s : l)
         {
-//            jComboBox7.addItem(Integer.toString(s));
+            jComboBox3.addItem(Integer.toString(s));
+            jComboBox4.addItem(Integer.toString(s));
             jComboBox8.addItem(Integer.toString(s));
-//            jComboBox9.addItem(Integer.toString(s));
         }
     }
 
