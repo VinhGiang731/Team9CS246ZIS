@@ -84,11 +84,11 @@ public class Form1 extends javax.swing.JFrame {
                 jComboBox2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 135, -1));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 130, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Ngày đi");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 60, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 60, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Điểm đến");
@@ -96,7 +96,7 @@ public class Form1 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Ngày về");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 65, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 65, -1));
 
         jComboBox3.setToolTipText("");
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
@@ -154,16 +154,17 @@ public class Form1 extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 205, 47));
 
         jDateChooser1.setDateFormatString("dd-MM-yyyy");
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 135, 20));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, 20));
 
         jDateChooser2.setDateFormatString("dd-MM-yyyy");
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 120, -1));
+        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 130, -1));
 
-        jLabel12.setText("jLabel12");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 200, -1));
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 0, 51));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 220, 30));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background.jpg"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 470));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -180, 490, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,7 +214,7 @@ public class Form1 extends javax.swing.JFrame {
             else 
             {
                 // sai thì báo lỗi 
-                jLabel12.setText(" chưa chọn ngày tháng năm ");
+                jLabel12.setText(" Chưa chọn ngày tháng năm ");
             }
         }
         else if(selecDiemDi.trim().equals("Hà Nội") && selecDiemDen.trim().equals("Hải Phòng"))
@@ -231,12 +232,12 @@ public class Form1 extends javax.swing.JFrame {
             else 
             {
                 // sai thì báo lỗi 
-                jLabel12.setText(" chưa chọn ngày tháng năm ");
+                jLabel12.setText(" Chưa chọn ngày tháng năm. ");
             }
         }
         else 
         {
-            jLabel12.setText(" hiện tại chưa có chuyến bay ");
+            jLabel12.setText(" Hiện tại Chưa có chuyến bay ! ");
         }
         
 
