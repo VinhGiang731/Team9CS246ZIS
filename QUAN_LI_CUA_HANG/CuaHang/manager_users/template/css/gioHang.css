@@ -1,0 +1,27 @@
+.wrapper_btn {
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+.overlay.active {
+    right: 0;
+}
+.danger{
+    box-shadow: 0 10px 10px var(--orange);
+    transform: translate(0,-10px);
+}
+.cart .product_store{
+    display: none;
+}
+/* .cart .remove{
+    display: inline-block!important;
+} */
